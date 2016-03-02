@@ -807,71 +807,117 @@ code {
 <div class="reveal">
     <div class="slides">
         <section>
-    <h3 id="ma441-lec-12-2-5-the-chain-rule">MA441- LEC 12 -2.5 The chain rule</h3>
+    <h3 id="ma441-lec-14-2-6-implicit-differentiation-">MA441- LEC 14 -2.6 Implicit Differentiation.</h3>
 <h4 id="by-kwang">By KWANG</h4>
 
   </section>
   <section>
     <h3 id="goal">Goal</h3>
 <ul>
-<li>Derivative of a composition of two functions</li>
+<li>Implicit Differentiation.</li>
 </ul>
 
   </section>
   <section>
-    <style>
+    <h3 id="maple-file">Maple file</h3>
+<p><a href="https://piazza.com/class_profile/get_resource/i4w7v2qzpw43ey/i6r5yh2z9z25n5">MAPLE FILE</a></p>
+
+  </section>
+  <section>
+    <p><style>
 p { text-align: left; }
-</style>
+</style></p>
+<h3 id="why-">Why?</h3>
+<p>Find the slope of tangent line to the circle \(x^2+y^2=25\) at the point \((3,4)\).
+<br></p>
+<div class="fragment">
+We can usually write \(y=f(x)\) locally in a explicit way.
+</div>
+<div class="fragment">
+<br>
+\( y^2=25-x^2\) implies \(y=\pm \sqrt{25-x^2}\).
+</div>
+<div class="fragment">
+Since \(4&gt;0\), choose
+\(y=\sqrt{25-x^2}\).
+</div>
+<div class="fragment">
+<br>
+From the chain rule, by letting \(u=25-x^2\),
 
-<p>Let \(F(x)=f(g(x))\). If \(g\) is differentiable at \(x\) and \(f\) is differentiable at \(g(x)\), then \(F(x)\) is also differentiable at \(x\) and</p>
-<p>\[
-F&#39;(x)=f&#39;(g(x))\cdot g&#39;(x)
-\]
-In other word, if \(y=f(u)\) and \(u=g(x)\) ,
+<br>
+
 \[
-\frac{dy}{dx}=\frac{dy}{du} \cdot \frac{du}{dx}
-\]</p>
+\frac{dy}{dx}=\frac{dy}{dy}\cdot \frac{du}{dx}=(\frac{1}{2\sqrt{u}})\cdot(-2x)=\frac{-x}{\sqrt{25-x^2}}
+\]
+</div>
+<div class="fragment">
+
+<br>
+Therefore \(y&#39;=\frac{-1(3)}{\sqrt{25-(3)^2}}=-\frac{3}{4}\).
+</div>
+  </section>
+  <section>
+    <h3 id="problem">Problem</h3>
+<p>It takes too much time to find an explicit form from the implicit form.</p>
+<p class="fragment">
+There is an alternative way which is called the method of <strong>implicit differentiation</strong>.
+</p>
+  </section>
+  <section>
+    <h3 id="implicit-differentiation">implicit differentiation</h3>
+<p>The key assumption is \(y=f(x)\) is a function of <em>one variable</em> \(x\).</p>
+<p class="fragment">
+For simplicity, let \(y&#39;=\frac{dy}{dx},~x&#39;=\frac{dx}{dx}=1\).
+</p>
+<p class="fragment">
+a. Differentiate both sides of the equation \(x^2+y^2=25\) with respect to \(x\).
+
+\[
+\frac{d}{dx}(x^2+y^2)=\frac{d}{dx}(25)
+\]
+</p>
+<p class="fragment">
+b. Use the chain rule.
+
+\[
+2x\cdot x&#39;+2y\cdot y&#39;=0
+\]
+</p>
+<p class="fragment">
+Since \(x&#39;=1\), \(\frac{dy}{dx}=y&#39;=\frac{-2x}{2y}=-\frac{x}{y}\).
+
+ \[slope=y&#39;=-\frac{3}{4}\]
+</p>
+  </section>
+  <section>
+    <h3 id="ex1">Ex1</h3>
+<p>a. Find \(y&#39;\) if \(x^3+y^3=6xy\)</p>
+<p class="fragment">
+b. Find the tangent to the folium of Descartes \(x^3+y^3=6xy\) at the point \((3,3)\).
+
+<a href="https://sagecell.sagemath.org/?z=eJxL06jQqdRUsFWoiDPWrowz1jXTqtCq5OXKzC3IyUzOLIkvyMkv0UjTUdDQNdQxUdCEMBRMNDV5uQAMzQ-M&amp;lang=sage">SAGE1</a>
+<a href="https://sagecell.sagemath.org/?z=eJyrtE0rzUsuyczP01CvVNep0OTlKknNLbBNyUxL06iIM9aujDPWNdOq0KoEyhTn55SlKmiAFOiAFVRqAkUB43wUwA==&amp;lang=sage">SAGE2</a>
+<br>
+<img src="https://cloud.githubusercontent.com/assets/10469752/6434154/7be20758-c050-11e4-8dda-db678cc48203.png" alt="picw300">
+</p>
+  </section>
+  <section>
+    <h3 id="ex2-find-y-if-sin-x-y-y-2-cdot-cos-x-">Ex2. Find \(y&#39;\) if \(\sin(x+y)=y^2\cdot \cos(x)\).</h3>
+<p><img src="https://cloud.githubusercontent.com/assets/10469752/6434173/f8649c32-c050-11e4-807a-5819fbbb754b.png" alt="picw300"></p>
 
   </section>
   <section>
-    <h3 id="ex1">EX1</h3>
-<p>Find \(F&#39;(x)\) if \(F(x)=\sqrt{x^2+1}\)</p>
-<p>Let \(u=x^2+1\) and \(y=\sqrt{u}\). </p>
-<p>From \(\frac{du}{dx}=2x\) and \(\frac{dy}{du}=\frac{1}{2}u^{-\frac{1}{2}}=\frac{1}{2\sqrt{u}}\)</p>
-<p>\[
-F&#39;(x)=\frac{dy}{du}\cdot \frac{du}{dx}=\frac{1}{2\sqrt{u}}\cdot 2x=\frac{2x}{2\sqrt{x^2+1}}=\frac{x}{\sqrt{x^2+1}}
-\]</p>
+    <h3 id="ex3-find-y-if-x-4-y-4-16-">EX3. Find \(y&#39;\) if \(x^4+y^4=16\)</h3>
+<p><img src="https://cloud.githubusercontent.com/assets/10469752/6434177/06435208-c051-11e4-95b0-c4564745c819.png" alt="picw300"></p>
 
   </section>
   <section>
-    <h3 id="ex2-">EX2.</h3>
-<p>a. \(y=\sin(x^2)\) </p>
-<p>b.\(y=\sin^2(x)\)</p>
+    <h3 id="ex4-find-y-if-x-4-y-4-16-">EX4. Find \(y&#39;&#39;\) if \(x^4+y^4=16\)</h3>
 
   </section>
   <section>
-    <h3 id="ex3-">EX3.</h3>
-<p>Differentiate \(y=(x^3-1)^{100}\).</p>
-
-  </section>
-  <section>
-    <h3 id="ex4-">EX4.</h3>
-<p>Differentiate \(y=(2x+1)^5\cdot(x^3-x+1)^4\)</p>
-
-  </section>
-  <section>
-    <h3 id="ex5-">EX5.</h3>
-<p>Differentiate \(y=\sin(\cos(\tan(x)))\)</p>
-
-  </section>
-  <section>
-    <h3 id="ex6-">EX6.</h3>
-<p>Differentiate \(y=\sin(x)\cdot \cos(x^2)\)</p>
-
-  </section>
-  <section>
-    <h3 id="ex7-">EX7.</h3>
-<p>If \(h(x)=\sqrt{4+3f(x)}\), where \(f(1)=7,~f&#39;(1)=4\), find \(h&#39;(1)\).</p>
+    <p>-</p>
 
   </section>
 
