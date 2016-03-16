@@ -807,7 +807,155 @@ code {
 <div class="reveal">
     <div class="slides">
         <section>
-    
+    <p>title: MA441-Lecture 17
+output: 17.html
+controls: true
+theme: kwangkim/reveal-cleaver-theme</p>
+
+  </section>
+  <section>
+    <h3 id="ma441-lec-17-3-1-maximum-and-minimum-values">MA441- LEC 17 - 3.1 Maximum and Minimum Values</h3>
+<h4 id="by-kwang">By KWANG</h4>
+
+  </section>
+  <section>
+    <h3 id="goal">Goal</h3>
+<ul>
+<li>Absolute max/min</li>
+<li>local max/min</li>
+<li>The Extreme Value Theorem</li>
+<li>Fermat&#39;s Theorem</li>
+<li>Critical number of $f$</li>
+</ul>
+
+  </section>
+  <section>
+    <p><style>
+p { text-align: left; }
+.reveal .slides {
+  height: 100%;
+  margin-top: 0;
+}
+strong { 
+    color: red;
+}
+</style></p>
+<h3 id="motivation-max-min">Motivation - MAX-MIN</h3>
+<p>What is the shape of a can that minimizes manufacturing costs?</p>
+
+  </section>
+  <section>
+    <h3 id="absolute-max-min-vs-local-max-min">Absolute Max/Min vs Local Max/Min</h3>
+<p> Let $c$ be a number in the domain $D$ of a function $f$.
+Then $f(c)$ is the</p>
+<ul>
+<li><strong>absolute/global maximum</strong> value of $f$ on D if $f(c)\geq f(x)$ for all $x\in D$</li>
+<li><strong>absolute/global minimum</strong> value of $f$ on D if $f(c)\leq f(x)$ for all $x\in D$
+<br></li>
+<li><strong>relative/local maximum</strong> value of $f$ on D if $f(c)\geq f(x)$  for all $x\in(x-\epsilon,x+\epsilon)$</li>
+<li><strong>relative/local minimum</strong> value of $f$ on D if $f(c)\leq f(x)$ for all $x\in(x-\epsilon,x+\epsilon)$</li>
+</ul>
+<h3 id="remark">Remark</h3>
+<p>By the definition, $f$ values of <strong>two endpoints cannot be local maximum nor local minimum</strong>.</p>
+
+  </section>
+  <section>
+    <h3 id="proposition-1">Proposition 1</h3>
+<p>Absolute max/min are <strong>local max/min or two endpoints</strong>.</p>
+
+  </section>
+  <section>
+    <h3 id="question-1">Question 1</h3>
+<p>Find absolute, local max/min.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/10469752/10500900/2e1c938c-72aa-11e5-8c7f-64e31a9e157c.png" alt="19lec"></p>
+
+  </section>
+  <section>
+    <h3 id="question-2">Question 2</h3>
+<p>Find absolute, local max/min.$ f(x)=3x^4-16x^3+18x^2, -1\leq x\leq 4 $
+<img src="https://cloud.githubusercontent.com/assets/10469752/10500949/99afcf60-72aa-11e5-93d8-237a02d94a27.png" alt="19lecf"></p>
+
+  </section>
+  <section>
+    <h3 id="question-3">Question 3</h3>
+<p>Find absolute, local max/min.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/10469752/10500985/02b6fa7e-72ab-11e5-8ca4-6d723b971835.png" alt="19lecg"></p>
+
+  </section>
+  <section>
+    <h3 id="the-extreme-value-theorem">The Extreme value theorem</h3>
+<p>If $f$ is <strong>continuous</strong> on a <strong>closed</strong> interval $[a,b]$,
+then $f$ attains an absolute maximum value $f(c)$ and an absolute minimum value of $f(d)$ at some numbers 
+$c,d\in [a,b]$.</p>
+
+  </section>
+  <section>
+    <h3 id="fermat-s-theorem">Fermat&#39;s theorem</h3>
+<p>If $f$ has a local max/min at $c$ and if $f&#39;(c)$ exists, then $f&#39;(c)=0$</p>
+<div class="fragment">
+<h3> Remark</h3>
+Converse of Fermat&#39;s theorem is not true. 
+Even though $f&#39;(c)=0$, it needs not to be local max/min.
+</div>
+  </section>
+  <section>
+    <h3 id="example">Example</h3>
+<p>Let $f(x)=x^3$. Then $f&#39;(0)=0$. But $f(0)$ is not local max/min.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/10469752/10501245/624cdcb8-72ad-11e5-96f0-fec177ea4eb9.png" alt="19lec-x3"></p>
+
+  </section>
+  <section>
+    <h3 id="critical-number">Critical number</h3>
+<p><strong>critical number</strong> of a function $f$ is a number $c$ in the <strong> domain of $f$</strong> such that </p>
+<div class="fragment">
+1. $f&#39;(c)=0$ 
+<div>
+
+<div class="fragment">
+<strong>or</strong> 
+<br>
+2. $f&#39;(c)$ does not exist.
+</div>
+
+<div class="fragment">
+<h3>Remark</h3>
+<p>Two endpoints may or may not give critical numbers. But two endpoints never give local max/min.</p>
+</div>
+  </section>
+  <section>
+    <h3 id="revised-fermat-theorem">Revised: Fermat theorem</h3>
+<p>If $f$ has a local max/min at $c$, then $c$ is critical number of $f$.</p>
+
+  </section>
+  <section>
+    <h3 id="question-4">Question 4</h3>
+<p>Find the critical numbers of $$f(x)=x^{3/5}(4-x)$$
+<img src="https://cloud.githubusercontent.com/assets/10469752/10501362/a9b76cf2-72ae-11e5-8c02-5c1a941e0bde.png" alt="19lec-critical"></p>
+
+  </section>
+  <section>
+    <h3 id="the-closed-interval-method">The closed Interval Method</h3>
+<p>To find the absolute max/min value of a continuous function $f$ on a closed interval $[a,b]$</p>
+<ol>
+<li class="fragment"> Find the values of $f$ at the <strong>critical numbers</strong> of $f$ in $(a,b)$. </li>
+<li class="fragment"> Find $f(a)$ and  $f(b)$ which are the values of $f$ at <strong>two endpoints</strong> </li>
+</ol>
+  </section>
+  <section>
+    <h3 id="question-5">Question 5</h3>
+<p>Find the absolute max/min value of the function
+$$f(x)=x^3-3x^2+1,~-\frac{1}{2}\leq x\leq 4$$</p>
+<div class="fragment">
+<img src="https://cloud.githubusercontent.com/assets/10469752/10501448/b97d400c-72af-11e5-9305-ede12f11e33e.png" alt="19lec-x3-3x21">
+</div>
+  </section>
+  <section>
+    <h3 id="question-6">Question 6</h3>
+<p>Find the absolute max/min value of the function
+$$f(x)=x-2\sin(x),~0\leq x\leq 2\pi$$</p>
+<div class="fragment">
+<img src="https://cloud.githubusercontent.com/assets/10469752/10501479/03c366aa-72b0-11e5-9924-d8f36146e734.png" alt="19lec-sin">
+</div>
   </section>
 
     </div>
