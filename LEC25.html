@@ -808,22 +808,22 @@ code {
     <div class="slides">
         <section>
     <h3 id="the-definite-integral">The definite integral</h3>
-<p>If $f$ is a function defined for $a\leq x\le b$, we divide the interval $[a,b]$ into $n$ sub-intervals $[x<em>i,x</em>{i+1}]~(i=0,\ldots,n-1)$ of equal width $\Delta x=\frac{b-a}{n}$.
-$$\int^b<em>a f(x)dx=\lim</em>{n\to \infty}f(x<em>i^*)\Delta x=\lim</em>{n\to \infty}\left[f(x<em>1^<em>)\Delta x+\ldots+f(x_n^</em>)\Delta x\right]$$
-with any sample points $x_i^*\in[x_i,x</em>{i+1}]$</p>
+<p>If $f$ is a function defined for $a\leq x\le b$, we divide the interval $[a,b]$ into $n$ sub-intervals $[x_i,x_{i+1}]~(i=0,\ldots,n-1)$ of equal width $\Delta x=\frac{b-a}{n}$.</p>
+<p>$$\int^b<em>a f(x)dx=\lim\</em>{n\to \infty}f(x_i^<em>)\Delta x=\lim_{n\to \infty}\left[f(x_1^</em>)\Delta x+\ldots+f(x_n^<em>)\Delta x\right]$$
+with any sample points $x_i^</em>\in[x_i,x_{i+1}]$</p>
 <p><img src="lec25-area-def.png" alt="area-def"></p>
 <p>If it does exist, we say that $f$ is <strong>integrable</strong> on $[a,b]$.</p>
 
   </section>
   <section>
     <h3 id="remark">Remark</h3>
-<p>Actually, the sub-interval widths do not need to be same if $width\to 0$. Let $\Delta{x<em>1},\ldots,\Delta {x_n}$. Then
-$$\int^b_a f(x)dx=\lim</em>{max(\Delta<em>i)\to 0}\sum^n</em>{i=1} f(x_i^*)\Delta{x_i}$$</p>
+<p>Actually, the sub-interval widths do not need to be same if $width\to 0$. Let $\Delta{x_1},\ldots,\Delta {x_n}$. Then
+$$\int^b<em>a f(x)dx=\lim\</em>{max(\Delta_i)\to 0}\sum^n_{i=1} f(x_i^*)\Delta{x_i}$$</p>
 
   </section>
   <section>
     <h3 id="signed-area">Signed area</h3>
-<p> definite integral can be interpreted as a net area with signs.\
+<p> definite integral can be interpreted as a net area with signs.
 <img src="lec25-signed-area.png" alt="signed-area"></p>
 
   </section>
@@ -834,9 +834,9 @@ $$\int^b_a f(x)dx=\lim</em>{max(\Delta<em>i)\to 0}\sum^n</em>{i=1} f(x_i^*)\Delt
   </section>
   <section>
     <h3 id="theorem">theorem</h3>
-<p>If $f$ is integrable on $[a,b]$, then by choosing $x<em>i^*=x_i$,
+<p>If $f$ is integrable on $[a,b]$, then by choosing $x_i^*=x_i$,
 $$
-\int^b_a f(x)dx=\lim</em>{n\to \infty}\sum^n_{i=1} f(x_i)\Delta x
+\int^b<em>a f(x)dx=\lim</em>{n\to \infty}\sum^n_{i=1} f(x_i)\Delta x
 $$
 where $\Delta x=\frac{b-a}{n}$ and $x_i=a+i\Delta x$.</p>
 
