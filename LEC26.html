@@ -841,23 +841,25 @@ $$\frac{F(x+h)-F(x)}{h}=\frac{1}{h}\int^{x+h}_{x} f(t)dt$$</li>
 <p>$$
 f(u)\leq f(x)\leq f(v)\Rightarrow f(u)h\leq \int^{x+h}_{x} f(t) dt \leq f(v)h
 $$</p>
-<p>Since $h&gt;0$,
-$$
-f(u)\leq \frac{1}{h}\int^{x+h}_{x} f(t)dt=\frac{F(x+h)-F(x)}{h}\leq f(v)
-$$</p>
 
   </section>
   <section>
     <ul>
-<li>Repeat again with $h&lt;0$.</li>
-<li>Since $f$ is continuous at $x$ and $u,v \to x$ as $h\to 0$,
+<li>Since $h&gt;0$,
 $$
-\lim<em>{h\to 0} f(u)=\lim</em>{u\to x}f(u)=f(x)~and~\lim<em>{h\to 0} f(u)=\lim</em>{u\to x}f(u)=f(x)
+f(u)\leq \frac{1}{h}\int^{x+h}_{x} f(t)dt=\frac{F(x+h)-F(x)}{h}\leq f(v)
+$$</li>
+<li>Repeat again with $h&lt;0$.</li>
+<li>Since $f$ is continuous at $x$ and $u,v \to x$ as $h\to 0$,</li>
+</ul>
+<p>$$
+\lim_{h\to 0} f(u)=\lim_{u\to x}f(u)=f(x)~and~\lim_{h\to 0} f(u)=\lim_{u\to x}f(u)=f(x)
 $$
 By squeeze theorem,
 $$
 F&#39;(x)=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}=f(x)
-$$</li>
+$$</p>
+<ul>
 <li>For $x=a$ or $x=b$, repeat above with one-sided limits.</li>
 </ul>
 
