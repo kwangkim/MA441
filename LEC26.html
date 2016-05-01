@@ -845,18 +845,24 @@ $$</p>
   </section>
   <section>
     <ul>
-<li>Since $h&gt;0$,
-$$
-f(u)\leq \frac{1}{h}\int^{x+h}_{x} f(t)dt=\frac{F(x+h)-F(x)}{h}\leq f(v)
-$$</li>
-<li>Repeat again with $h&lt;0$.</li>
-<li>Since $f$ is continuous at $x$ and $u,v \to x$ as $h\to 0$,</li>
+<li>Since $h&gt;0$,</li>
 </ul>
 <p>$$
+f(u)\leq \frac{1}{h}\int^{x+h}_{x} f(t)dt=\frac{F(x+h)-F(x)}{h}\leq f(v)
+$$</p>
+<ul>
+<li><p>Repeat again with $h&lt;0$.</p>
+</li>
+<li><p>Since $f$ is continuous at $x$ and $u,v \to x$ as $h\to 0$,
+<br>
+$$
 \lim_{h\to 0} f(u)=\lim_{u\to x}f(u)=f(x)~and~\lim_{h\to 0} f(u)=\lim_{u\to x}f(u)=f(x)
 $$
-By squeeze theorem,
-$$
+<br>
+By squeeze theorem,</p>
+</li>
+</ul>
+<p>$$
 F&#39;(x)=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}=f(x)
 $$</p>
 <ul>
