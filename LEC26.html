@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>MA441-Lecture 25</title>
+  <title>Untitled</title>
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -807,125 +807,138 @@ code {
 <div class="reveal">
     <div class="slides">
         <section>
-    <h3 id="the-definite-integral">The definite integral</h3>
-<p>If $f$ is a function defined for $a\leq x\le b$, we divide the interval $[a,b]$ into $n$ sub-intervals $[x_i,x_{i+1}]~(i=0,\ldots,n-1)$ of equal width $\Delta x=\frac{b-a}{n}$.</p>
-<p>$$\int^b_a f(x) dx=
-\lim_{n\to \infty} \sum^n_{i=1} f(x_i^{*})\Delta x$$</p>
-<p>with any sample points $x_i^{*} \in [x_i,x_{i+1}]$</p>
-<p><img src="lec25-area-def.png" alt="area-def"></p>
-<p>If it does exist, we say that $f$ is <strong>integrable</strong> on $[a,b]$.</p>
+    <h3 id="question">Question</h3>
+<p>If $f$ is continuous on $[a,b]$, is there an  anti-derivative of $f$? How to find it?</p>
 
   </section>
   <section>
-    <h3 id="remark">Remark</h3>
-<p>Actually, the sub-interval widths do not need to be same if $width\to 0$. Let $\Delta{x_1},\ldots,\Delta {x_n}$. Then
-$$\int^b_a f(x)dx=\lim_{max(\Delta_i)\to 0}\sum^n_{i=1} f(x_i^*)\Delta{x_i}$$</p>
-
-  </section>
-  <section>
-    <h3 id="signed-area">Signed area</h3>
-<p> definite integral can be interpreted as a net area with signs.
-<img src="lec25-signed-area.png" alt="signed-area"></p>
-
-  </section>
-  <section>
-    <h3 id="theorem">theorem</h3>
-<p>If $f$ is <strong>continuous</strong> on $[a,b]$ or if $f$ has only a <strong>*finite number of jump discontinuities</strong>, then $f$ is integrable on $[a,b]$.</p>
-
-  </section>
-  <section>
-    <h3 id="theorem">theorem</h3>
-<p>If $f$ is integrable on $[a,b]$, then by choosing $x_i^*=x_i$,</p>
-<p>$$
-\int^b_a f(x)dx=\lim_{n\to \infty}\sum^n_{i=1} f(x_i)\Delta x
+    <h3 id="the-fundamental-theorem-of-calculus-part-i">The Fundamental Theorem of Calculus, Part I</h3>
+<p>If $f$ is continuous on $[a,b]$, then the function $F$ defined by 
+$$
+F(x)=\int^x_a f(t)dt,~a\leq x\leq b
+$$
+is continuous on $[a,b]$ and differentiable on $(a,b)$ and
+$$
+F&#39;(x)=f(x)
 $$</p>
-<p>where $\Delta x=\frac{b-a}{n}$ and $x_i=a+i\Delta x$.</p>
 
   </section>
   <section>
-    <h3 id="ex-">Ex.</h3>
-<p>Express
-$$\lim_{n\to \infty}\sum^n_{i=1}(x_i^3+x_i \sin(x_i))\Delta x$$</p>
-<p>as an integral on the interval $[0,\pi]$.</p>
+    <p>Namely,
+$$
+\frac{d}{dx}\left(\int^x_a f(t)dt\right)=f(x)
+$$</p>
 
   </section>
   <section>
-    <h3 id="sums">sums</h3>
-<p>$$1+2+3+\ldots+n=\frac{n(n+1)}{2}$$
-$$1^2+2^2+\ldots+n^2=\frac{n(n+1)(2n+1)}{6}$$
-$$1^3+2^3+\ldots+n^3=\left(\frac{n(n+1)}{2}\right)^2$$</p>
-
-  </section>
-  <section>
-    <h3 id="proposition">Proposition</h3>
-<p>Simple rules for sigma notations.</p>
+    <h3 id="proof">Proof</h3>
 <ul>
-<li>$\ds \sum^{n}_{i=1} c=c\cdot n$</li>
-<li>$\ds \sum^{n}_{i=1} c\cdot a_i=c\cdot \sum^{n}_{i=1} a_i$</li>
-<li>$\ds \sum^{n}_{i=1}(a_i+b_i)=\sum^{n}_{i=1} a_i+\sum^{n}_{i=1} b_i$</li>
-<li>$\ds \sum^{n}_{i=1}(a_i-b_i)=\sum^{n}_{i=1} a_i-\sum^{n}_{i=1} b_i$</li>
+<li>Assume $x\in (a,b)$.</li>
+<li>For $h\neq 0$,
+$$\frac{F(x+h)-F(x)}{h}=\frac{1}{h}\int^{x+h}_{x} f(t)dt$$</li>
+<li>For $h&gt;0$, let $f(v)=max{f(x)|x\in [x,x+h]}$ and $f(u)=min{f(x)|x\in [x,x+h]}$ with $u,v\in [x,x+h]$.
+$$
+f(u)\leq f(x)\leq f(v)\Ra f(u)h\leq \int^{x+h}<em>{x}f(t)dt\leq f(v)h
+$$
+Since $h&gt;0$,
+$$
+f(u)\leq \frac{1}{h}\int^{x+h}</em>{x} f(t)dt=\frac{F(x+h)-F(x)}{h}\leq f(v)
+$$</li>
 </ul>
-
-  </section>
-  <section>
-    <h3 id="ex">EX</h3>
-<p>Evaluate $\int^3_0(x^3-6x)dx$ using the definition.</p>
-
-  </section>
-  <section>
-    <h3 id="ex">EX</h3>
-<p>Evaluate the following integrals by interpreting each in terms of areas.</p>
-<ul>
-<li>$\int^1_0 \sqrt{1-x^2}dx=$</li>
-<li>$\int^3_0(x-1)dx=$</li>
-</ul>
-
-  </section>
-  <section>
-    <h3 id="properties-of-definite-integrals">Properties of (definite) integrals</h3>
-<ul>
-<li><p>$\ds \int^b_a c dx=c(b-a)$ where $c$ is a constant.</p>
-</li>
-<li><p>$\ds \int^b_a c\cdot f(x)dx=c\int^b_a f(x)dx$, where $c$ is any constant.</p>
-</li>
-<li><p>$\ds\int^b_a[f(x)+g(x)]dx=\int^b_a f(x)dx+\int^b_a g(x)dx$</p>
-</li>
-<li><p>$\ds\int^b_a[f(x)-g(x)]dx=\int^b_a f(x)dx-\int^b_a g(x)dx$</p>
-</li>
-<li><p>$\int^c_a f(x)dx+\int^b_c f(x)dx=\int^b_a f(x)dx$</p>
-</li>
-</ul>
-<p><img src="lec25-ajacent.png" alt="ajacent"></p>
-
-  </section>
-  <section>
-    <h3 id="ex">EX</h3>
-<p>Use the properties of integrals to evaluate $\int^1_0(4+3x^2)dx$ with $\int^1_0 x^2dx=\frac{1}{3}$</p>
-
-  </section>
-  <section>
-    <h3 id="ex">EX</h3>
-<p>From $\int^{10}_0 f(x)dx=17$ and $\int^8_{10} f(x)dx=12$, find $\int^{10}_8 f(x)dx$.</p>
-
-  </section>
-  <section>
-    <h3 id="comparison-properties-of-the-integral">Comparison Properties of the integral</h3>
 
   </section>
   <section>
     <ul>
-<li>If $f(x)\geq 0$ for $a\leq x \leq b$, then $\ds \int^b_a f(x) dx\geq 0$</li>
-<li>If $f(x)\geq g(x)$ for $a\leq x\leq b$, then</li>
-<li>$\int^b_a f(x)dx\geq \int^b_a g(x)dx$</li>
-<li>If $m\leq f(x)\leq M$, then 
-$m(b-a)\leq \int^b_a f(x) dx\leq M(b-a)$</li>
+<li>Repeat again with $h&lt;0$.</li>
+<li>Since $f$ is continuous at $x$ and $u,v \to x$ as $h\to 0$,
+$$
+\lim<em>{h\to 0} f(u)=\lim</em>{u\to x}f(u)=f(x)~and~\lim<em>{h\to 0} f(u)=\lim</em>{u\to x}f(u)=f(x)
+$$
+By squeeze theorem,
+$$
+F&#39;(x)=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}=f(x)
+$$</li>
+<li>For $x=a$ or $x=b$, repeat above with one-sided limits.</li>
 </ul>
 
   </section>
   <section>
-    <h3 id="extra">Extra</h3>
-<p>(Extra) Prove the inequality.
-$$\int^3_1 \sqrt{x^4+1}dx\geq \frac{26}{3}$$</p>
+    <h3 id="ex">EX</h3>
+<p>Find $g&#39;(x)$ if $g(x)=\int^x_0 \sqrt{1+t^2}dt$.
+}</p>
+
+  </section>
+  <section>
+    <h3 id="proof">Proof</h3>
+<p>From the FTC1,
+$$
+g&#39;(x)=\frac{d}{dx}\left(\int^x_0 \sqrt{1+t^2}dt\right)=\sqrt{1+x^2}
+$$</p>
+
+  </section>
+  <section>
+    <h3 id="ex">EX</h3>
+<p>Find $S&#39;(x)$ if $S(x)=\int^x_0 \sin(\frac{\pi t^2}{2})dt$.</p>
+
+  </section>
+  <section>
+    <h3 id="ex">EX</h3>
+<p>Find $\ds \frac{d}{dx}\int^{x^4}_{1}\sec(t)dt$.</p>
+
+  </section>
+  <section>
+    <h3 id="proof">Proof</h3>
+<p>Let $u=x^4$ and $F(u)=\int^{u}_{1}\sec(t)dt$.
+From FTC1,
+$$
+\frac{dF}{du}=\sec{(u)}
+$$
+By the chain rule,
+$$
+\frac{dF}{dx}=\frac{dF}{du}\cdot \frac{du}{dx}=\sec{(x^4)}\cdot(4x^3)
+$$</p>
+
+  </section>
+  <section>
+    <h2 id="-">#</h2>
+<p>The Fundamental Theorem of Calculus, Part II</p>
+<p>If $f$ is continuous on $[a,b]$, then
+$$
+\int^b_a f(t)dt=F(b)-F(a)=F(x)]^b_a
+$$
+where $F$ is any anti-derivative of $f$ ($F&#39;=f$).</p>
+
+  </section>
+  <section>
+    <h3 id="ex">EX</h3>
+<p>Evaluate the integral $\ds\int^1_{-2}x^3dx$.</p>
+
+  </section>
+  <section>
+    <h3 id="proof">Proof</h3>
+<p>$f(x)=x^3$ is continuous on $[-2,1]$ and $F(x)=\frac{1}{4}x^4$ is an anti-derivative of $f$. By FTC2,
+$$
+\int^1<em>{-2}x^3dx=\left.F(x)\right]^1</em>{-2}=F(1)-F(-2)=\frac{1}{4}(1)^4-\frac{1}{4}(-2)^4=-\frac{15}{4}
+$$</p>
+
+  </section>
+  <section>
+    <h3 id="ex">Ex</h3>
+<p>Find the area under the parabola $y=x^2$ from 0 to 1.</p>
+
+  </section>
+  <section>
+    <h3 id="ex">EX</h3>
+<p>What is wrong with the following calculation?
+$$
+\int^3<em>{-1}\frac{1}{x^2}dx=\left.\frac{x^{-1}}{-1}\right]^3</em>{-1}=\left(-\frac{1}{3}\right)-1=-\frac{4}{3}
+$$</p>
+
+  </section>
+  <section>
+    <h3 id="ex">EX</h3>
+<p>Evaluate the limit by recognizing the sum as a Riemann sum.
+$$\lim<em>{n\to \infty}\sum^{n}</em>{i=1}\frac{i^3}{n^4}$$</p>
 
   </section>
 
